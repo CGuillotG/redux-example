@@ -1,15 +1,15 @@
 import React, { FormEvent } from 'react';
 
 import { useSelector } from 'react-redux';
-import { rootStore } from 'ReduxExampleStore/root.store';
-import { selectUserDetails } from 'ReduxExampleStore/root.selectors';
-import { RootActions } from 'ReduxExampleStore/root.actions';
+import { reduxToolkitRootStore } from 'ReduxToolkitStore/root.store';
+import { selectUserDetails } from 'ReduxStore/root.selectors';
+import { changeUserDetails } from 'ReduxToolkitStore/userDetails.actions';
 
 import { CustomHTMLFormElement, UserDetails } from 'types';
 import { BaseUserDetailsForm } from 'SharedChildren/BaseUserDetailsForm';
 import { Counter } from 'SharedContainers/Counter';
 
-export const UserDetailsFormRedux: React.VFC = (): JSX.Element => {
+export const UserDetailsFormReduxToolkit: React.VFC = (): JSX.Element => {
   const userDetails: UserDetails = useSelector(selectUserDetails);
 
   const updateUserDetails = (event: FormEvent<CustomHTMLFormElement>): void => {
@@ -20,10 +20,7 @@ export const UserDetailsFormRedux: React.VFC = (): JSX.Element => {
       age: Number(event.currentTarget.age.value),
     };
 
-    rootStore.dispatch({
-      type: RootActions.CHANGE_USER_DETAILS,
-      payload: newUserDetails,
-    });
+    reduxToolkitRootStore.dispatch(changeUserDetails(newUserDetails));
   };
 
   return (

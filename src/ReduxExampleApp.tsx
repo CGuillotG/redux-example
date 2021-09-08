@@ -6,8 +6,8 @@ import { Description } from 'SharedContainers/Description';
 import { ChildrenContainer } from 'SharedChildren/ChildrenContainer';
 import { DummyGrandchild } from 'SharedChildren/DummyGrandchild';
 
-import { StaticUserDetailsRedux } from 'ReduxExampleChildren/StaticUserDetailsRedux';
-import { UserDetailsFormRedux } from 'ReduxExampleChildren/UserDetailsFormRedux';
+import { StaticUserDetailsRedux } from 'ReduxChildren/StaticUserDetailsRedux';
+import { UserDetailsFormRedux } from 'ReduxChildren/UserDetailsFormRedux';
 
 //---------------------------------------------------------------------------------------+
 
@@ -36,11 +36,11 @@ export const ReduxExampleApp: React.VFC = (): JSX.Element => {
             <DummyGrandchild />
           </ChildrenContainer>
 
-          <ChildrenContainer title='User Details'>
+          <ChildrenContainer title='User Details Slice'>
             <StaticUserDetailsRedux />
           </ChildrenContainer>
 
-          <ChildrenContainer title='User Details Form'>
+          <ChildrenContainer title='User Details Slice Form'>
             <UserDetailsFormRedux />
           </ChildrenContainer>
         </Description>

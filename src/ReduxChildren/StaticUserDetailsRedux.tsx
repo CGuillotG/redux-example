@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useSelector } from 'react-redux';
-import { selectAge, selectUsername } from 'ReduxExampleStore/root.selectors';
+import { selectAge, selectUsername } from 'ReduxStore/root.selectors';
 
 import { Counter } from 'SharedContainers/Counter';
 
